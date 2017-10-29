@@ -1,0 +1,24 @@
+---
+title: "R Markdown and Leaflet"
+author: "Jeff Tolotti"
+date: "10/28/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## October 28, 2017
+
+
+```{r}
+library(leaflet)
+set.seed(2016-04-25)
+df <- data.frame(lat = runif(20, min = 35.60, max = 35.72),
+                 lng = runif(20, min = 139.69, max = 139.92))
+df %>%
+  leaflet() %>%
+  addTiles() %>%
+  addMarkers()
+```
